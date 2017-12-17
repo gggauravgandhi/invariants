@@ -17,7 +17,7 @@ npm install invariant
 ## `invariant(condition, message)`
 
 ```js
-const invariant = require('invariant');
+const invariant = require('invariants');
 
 invariant(someTruthyVal, 'This will not throw');
 // No errors

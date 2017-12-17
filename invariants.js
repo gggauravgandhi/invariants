@@ -1,10 +1,10 @@
 // Caching of node runtime environment
 var NODE_ENV = process.env.NODE_ENV;
 
-var invariant = function(condition, format, a, b, c, d, e, f) {
+var invariants = function(condition, format, a, b, c, d, e, f) {
   if (NODE_ENV !== 'production') {
     if (format === undefined) {
-      throw new Error('invariant requires an error message argument');
+      throw new Error('invariants requires an error message argument');
     }
   }
 
@@ -21,10 +21,10 @@ var invariant = function(condition, format, a, b, c, d, e, f) {
       error = new Error(
         format.replace(/%s/g, function() { return args[argIndex++]; })
       );
-      error.name = 'Invariant Violation';
+      error.name = 'invariants Violation';
     }
 
-    error.framesToPop = 1; // we don't care about invariant's own frame
+    error.framesToPop = 1; // we don't care about invariants's own frame
     throw error;
   }
 };
@@ -37,16 +37,16 @@ var root = typeof self == 'object' && self.self === self && self ||
   typeof global == 'object' && global.global === global && global ||
   this || {};
 
-// Export the Invariant object for **Node.js**, with
+// Export the Invariants object for **Node.js**, with
 // backwards-compatibility for their old module API. If we're in
-// the browser, add `invariant` as a global object.
+// the browser, add `invariants` as a global object.
 // (`nodeType` is checked to ensure that `module`
 // and `exports` are not HTML elements.)
 if (typeof exports != 'undefined' && !exports.nodeType) {
   if (typeof module != 'undefined' && !module.nodeType && module.exports) {
-    exports = module.exports = invariant;
+    exports = module.exports = invariants;
   }
-  exports.invariant = invariant;
+  exports.invariants = invariants;
 } else {
-  root.invariant = invariant;
+  root.invariants = invariants;
 }
