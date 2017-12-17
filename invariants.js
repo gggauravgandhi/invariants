@@ -27,7 +27,7 @@ var invariants = function (condition, format, a, b, c, d, e, f) {
       error = new Error(
         format.replace(/%s/g, function () { return args[argIndex++]; })
       );
-      error.name = 'invariants Violation';
+      error.name = 'Invariants Violation';
     }
 
     error.framesToPop = 1; // we don't care about invariants's own frame
