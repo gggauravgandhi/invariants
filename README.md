@@ -6,13 +6,25 @@ A mirror of Facebook's `invariant` (e.g. [React](https://github.com/facebook/rea
 
 A way to provide descriptive errors in development but generic errors in production.
 
+
 ## Install
 
-With [npm](http://npmjs.org) do:
-
+### NPM
 ```sh
 npm install invariants
 ```
+### Bower
+```sh
+bower install invariants
+```
+### Browser
+```html
+<script src="invariants.js"></script>
+<script>
+  invariants(false, 'This will always fail');
+</script>
+```
+
 
 ## `invariants(condition, message)`
 
