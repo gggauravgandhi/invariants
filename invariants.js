@@ -1,7 +1,13 @@
 // Caching of node runtime environment
-var NODE_ENV = process.env.NODE_ENV;
+// If running from browser, not using browesrify then consider production
+var NODE_ENV;
+if (typeof process !== 'undefined') {
+  NODE_ENV = process.env.NODE_ENV;
+} else {
+  NODE_ENV = "production";
+}
 
-var invariants = function(condition, format, a, b, c, d, e, f) {
+var invariants = function (condition, format, a, b, c, d, e, f) {
   if (NODE_ENV !== 'production') {
     if (format === undefined) {
       throw new Error('invariants requires an error message argument');
@@ -19,7 +25,7 @@ var invariants = function(condition, format, a, b, c, d, e, f) {
       var args = [a, b, c, d, e, f];
       var argIndex = 0;
       error = new Error(
-        format.replace(/%s/g, function() { return args[argIndex++]; })
+        format.replace(/%s/g, function () { return args[argIndex++]; })
       );
       error.name = 'invariants Violation';
     }
@@ -28,7 +34,6 @@ var invariants = function(condition, format, a, b, c, d, e, f) {
     throw error;
   }
 };
-
 
 // Establish the root object, `window` (`self`) in the browser, `global`
 // on the server, or `this` in some virtual machines. We use `self`
