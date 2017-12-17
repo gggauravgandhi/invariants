@@ -1,0 +1,23 @@
+{
+  "name": "invariants",
+  "description": "",
+  "main": "invariants.js",
+  "authors": [
+    "gggauravgandhi"
+  ],
+  "license": "BSD-3-Clause",
+  "keywords": [
+    "invariant",
+    "warning",
+    "facebook",
+    "assert"
+  ],
+  "homepage": "https://github.com/gggauravgandhi/invariants",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
