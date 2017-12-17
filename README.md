@@ -1,6 +1,6 @@
 # invariant
 
-Used [Underscore.js](https://github.com/jashkenas/underscore)'s way of making universal module, and used codebase of [zertosh invariants](https://github.com/zertosh/invariant), to make it usable everywhere.
+Used [Underscore.js](https://github.com/jashkenas/underscore)'s way of making universal module, and used codebase of [zertosh's invariants repo](https://github.com/zertosh/invariant), to make it usable everywhere.
 
 A mirror of Facebook's `invariant` (e.g. [React](https://github.com/facebook/react/blob/v0.13.3/src/vendor/core/invariant.js), [flux](https://github.com/facebook/flux/blob/2.0.2/src/invariant.js)).
 
@@ -17,7 +17,7 @@ npm install invariant
 ## `invariant(condition, message)`
 
 ```js
-var invariant = require('invariant');
+const invariant = require('invariant');
 
 invariant(someTruthyVal, 'This will not throw');
 // No errors
