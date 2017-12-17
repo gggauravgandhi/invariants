@@ -1,5 +1,7 @@
 # invariant
 
+Used [Underscore.js](https://github.com/jashkenas/underscore)'s way of making universal module, and used codebase of [zertosh invariants](https://github.com/zertosh/invariant), to make it usable everywhere.
+
 A mirror of Facebook's `invariant` (e.g. [React](https://github.com/facebook/react/blob/v0.13.3/src/vendor/core/invariant.js), [flux](https://github.com/facebook/flux/blob/2.0.2/src/invariant.js)).
 
 A way to provide descriptive errors in development but generic errors in production.
@@ -28,5 +30,5 @@ invariant(someFalseyVal, 'This will throw an error with this message');
 
 ### Compatibility
 
-Used Underscore.js's way of making universal module, so it will probably work for all types of imports.
+
 Raise an issue if doesn't work, and will update.
